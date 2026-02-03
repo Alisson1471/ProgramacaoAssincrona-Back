@@ -12,8 +12,8 @@ public class ProfessorAdapter {
 
     private final ProfessorRepository professorRepository;
 
-    public Professor login(String username, String password) {
-        var professor = professorRepository.findByUsuarioAndSenha(username, password);
+    public Professor login(String cpf, String password) {
+        var professor = professorRepository.findByCpfAndSenha(cpf, password);
 
         if (professor.isEmpty()) {
             throw new EntityNotFoundException("Professor não encontrado!");
