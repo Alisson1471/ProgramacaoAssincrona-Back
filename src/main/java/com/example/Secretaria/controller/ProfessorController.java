@@ -15,11 +15,6 @@ public class ProfessorController {
 
     private final ProfessorService professorService;
 
-    @GetMapping("/login")
-    public ResponseEntity<ProfessorResponse> login(@RequestParam String usuario, @RequestParam String senha) {
-        return ResponseEntity.status(200).body(professorService.login(usuario, senha));
-    }
-
     @PostMapping("/nota")
     public ResponseEntity<NotaResponse> lancarNota(@RequestBody NotaRequest request,
                                                    @RequestParam(name = "professor_id") int professorId) {

@@ -16,11 +16,6 @@ public class ProfessorService {
 
     private final ProfessorMapper professorMapper;
 
-    public ProfessorResponse login(String usuario, String senha) {
-        var professor = professorAdapter.login(usuario, senha);
-        return professorMapper.convertToResponse(professor);
-    }
-
     public NotaResponse lancarNota(NotaRequest request, int professorId) {
         return null;
     }
