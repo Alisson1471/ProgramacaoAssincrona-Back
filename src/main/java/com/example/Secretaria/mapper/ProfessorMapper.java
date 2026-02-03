@@ -1,6 +1,5 @@
 package com.example.Secretaria.mapper;
 
-import com.example.Secretaria.dto.response.ProfessorResponse;
 import com.example.Secretaria.dto.response.UserResponse;
 import com.example.Secretaria.model.Professor;
 import org.springframework.stereotype.Component;

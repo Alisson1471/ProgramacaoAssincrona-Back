@@ -1,9 +1,5 @@
 package com.example.Secretaria.dto.response;
 
-import com.example.Secretaria.model.Disciplina;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
