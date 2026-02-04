@@ -3,6 +3,7 @@ package com.example.Secretaria.controller;
 import com.example.Secretaria.dto.request.AlunoRequest;
 import com.example.Secretaria.model.Aluno;
 import com.example.Secretaria.service.AlunoService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.groups.Default;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@Tag(name = "Aluno", description = "Operações relacionadas aos Alunos")
 @RequestMapping("/aluno")
 @RestController
 public class AlunoController {
