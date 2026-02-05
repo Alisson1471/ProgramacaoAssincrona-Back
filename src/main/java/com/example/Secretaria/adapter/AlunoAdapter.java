@@ -21,4 +21,14 @@ public class AlunoAdapter {
 
         return aluno.get();
     }
+
+    public Aluno findById(int id) {
+        var aluno = alunoRepository.findById(id);
+
+        if (aluno.isEmpty()) {
+            throw new EntityNotFoundException("Aluno não encontrado!");
+        }
+
+        return aluno.get();
+    }
 }

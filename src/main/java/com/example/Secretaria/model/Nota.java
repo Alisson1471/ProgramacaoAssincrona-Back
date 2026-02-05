@@ -43,4 +43,12 @@ public class Nota {
     @NotNull(message = "campo 'aluno_id' não pode ser vazio")
     private Aluno aluno;
 
+    public Nota(String titulo, BigDecimal valor, Professor professor, Disciplina disciplina, Aluno aluno) {
+        this.titulo = titulo;
+        this.valor = valor;
+        this.professor = professor;
+        this.disciplina = disciplina;
+        this.aluno = aluno;
+    }
+
 }

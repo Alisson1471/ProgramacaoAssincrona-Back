@@ -20,4 +20,5 @@ public class ProfessorController {
         return ResponseEntity.status(201).body(professorService.lancarNota(request, professorId));
     }
 
+
 }

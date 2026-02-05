@@ -21,4 +21,14 @@ public class ProfessorAdapter {
 
         return professor.get();
     }
+
+    public Professor findById(int id) {
+        var professor = professorRepository.findById(id);
+
+        if (professor.isEmpty()) {
+            throw new EntityNotFoundException("Professor não encontrado!");
+        }
+
+        return professor.get();
+    }
 }
