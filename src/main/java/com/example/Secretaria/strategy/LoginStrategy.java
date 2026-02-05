@@ -1,9 +1,9 @@
 package com.example.Secretaria.strategy;
 
 import com.example.Secretaria.dto.request.LoginRequest;
-import com.example.Secretaria.dto.response.UserResponse;
+import com.example.Secretaria.dto.response.AlunoResponse;
 
 public interface LoginStrategy {
-    UserResponse login(LoginRequest loginRequest);
+    AlunoResponse login(LoginRequest loginRequest);
     boolean supports(String userType);
 }
