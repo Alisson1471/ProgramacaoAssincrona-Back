@@ -2,6 +2,7 @@ package com.example.Secretaria.strategy;
 
 import com.example.Secretaria.adapter.ProfessorAdapter;
 import com.example.Secretaria.dto.request.LoginRequest;
+import com.example.Secretaria.dto.response.ProfessorResponse;
 import com.example.Secretaria.dto.response.UserResponse;
 import com.example.Secretaria.mapper.ProfessorMapper;
 import lombok.RequiredArgsConstructor;
