@@ -16,8 +16,6 @@ public class NotaRequest {
 
     private double nota;
 
-    private String disciplina;
-
     @JsonProperty("aluno_id")
     private int alunoId;
 

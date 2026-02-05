@@ -20,9 +20,5 @@ public class UserResponse {
     private String senha;
 
     private String cpf;
-
-    private String matricula;
-
-    private String disciplina;
-
+    
 }

@@ -2,7 +2,6 @@ package com.example.Secretaria.controller;
 
 import com.example.Secretaria.dto.request.NotaRequest;
 import com.example.Secretaria.dto.response.NotaResponse;
-import com.example.Secretaria.dto.response.ProfessorResponse;
 import com.example.Secretaria.service.ProfessorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

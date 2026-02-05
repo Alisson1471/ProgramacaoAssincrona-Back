@@ -1,5 +1,6 @@
 package com.example.Secretaria.dto.response;
 
+import com.example.Secretaria.model.Disciplina;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,17 +10,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProfessorResponse {
+public class ProfessorResponse extends UserResponse {
 
-    private int id;
-
-    private String nome;
-
-    private String usuario;
-
-    private String disciplina;
-
-    private String cpf;
+    private Disciplina disciplina;
 
     private String matricula;
 
