@@ -1,10 +1,13 @@
 package com.example.Secretaria.adapter;
 
+import com.example.Secretaria.model.Nota;
 import com.example.Secretaria.model.Professor;
 import com.example.Secretaria.repository.ProfessorRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
