@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,7 +16,7 @@ public class NotaRequest {
 
     private String titulo;
 
-    private double nota;
+    private BigDecimal nota;
 
     @JsonProperty("aluno_id")
     private int alunoId;
