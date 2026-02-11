@@ -21,6 +21,11 @@ public class AlunoService {
         this.alunoRepository = alunoRepository;
     }
 
+    public Aluno getAluno(Integer id) {
+        return alunoRepository.findById(id)
+                .orElseThrow(EntityNotFoundException::new);
+    }
+
     public List<Aluno> listar() {
         return alunoRepository.findAll();
     }
