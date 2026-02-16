@@ -15,8 +15,6 @@ public class UserResponse {
 
     private String nome;
 
-    private String usuario;
-
     private String senha;
 
     private String cpf;

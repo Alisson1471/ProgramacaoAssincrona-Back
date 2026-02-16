@@ -47,7 +47,6 @@ public class AlunoService {
                 .orElseThrow(() -> new EntityNotFoundException("Aluno com ID " + id + " não encontrado."));
 
         aluno.setNome(alunoAtualizado.getNome());
-        aluno.setUsuario(alunoAtualizado.getUsuario());
         aluno.setSenha(alunoAtualizado.getSenha());
 
         return alunoRepository.save(aluno);
