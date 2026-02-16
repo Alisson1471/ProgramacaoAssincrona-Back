@@ -11,7 +11,6 @@ public class AlunoMapper {
         alunoResponse.setId(aluno.getId());
         alunoResponse.setNome(aluno.getNome());
         alunoResponse.setCpf(aluno.getCpf());
-        alunoResponse.setUsuario(aluno.getUsuario());
         alunoResponse.setSenha(aluno.getSenha());
         alunoResponse.setMatricula(aluno.getMatricula());
 

@@ -22,9 +22,6 @@ public class Professor {
     @NotNull(message = "campo 'nome' não pode ser vazio")
     private String nome;
 
-    @NotNull(message = "campo 'usuario' não pode ser vazio")
-    private String usuario;
-
     @NotNull(message = "campo 'senha' não pode ser vazio")
     private String senha;
 

@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 public class AlunoRequest {
 
     private String nome;
-    private String usuario;
     private String senha;
     private String cpf;
     private String matricula;
@@ -21,7 +20,6 @@ public class AlunoRequest {
     public Aluno toEntity() {
         return Aluno.builder()
                 .nome(this.getNome())
-                .usuario(this.getUsuario())
                 .senha(this.getSenha())
                 .cpf(this.getCpf())
                 .matricula(this.getMatricula())

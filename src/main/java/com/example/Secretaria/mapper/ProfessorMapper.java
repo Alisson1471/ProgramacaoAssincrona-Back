@@ -1,5 +1,6 @@
 package com.example.Secretaria.mapper;
 
+import com.example.Secretaria.dto.request.ProfessorRequest;
 import com.example.Secretaria.dto.response.ProfessorResponse;
 import com.example.Secretaria.dto.response.UserResponse;
 import com.example.Secretaria.model.Professor;
@@ -13,7 +14,6 @@ public class ProfessorMapper {
         professorResponse.setId(professor.getId());
         professorResponse.setNome(professor.getNome());
         professorResponse.setCpf(professor.getCpf());
-        professorResponse.setUsuario(professor.getUsuario());
         professorResponse.setSenha(professor.getSenha());
         professorResponse.setMatricula(professor.getMatricula());
 
@@ -25,6 +25,10 @@ public class ProfessorMapper {
         }
 
         return professorResponse;
+    }
+
+    public Professor convertToEntity(ProfessorRequest request) {
+        return null;
     }
 
 }
