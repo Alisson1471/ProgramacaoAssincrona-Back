@@ -25,9 +25,18 @@ public class AlunoController {
     public List<Aluno> listarAluno() {
         return alunoService.listar();
     }
-    @GetMapping("listarMatricula")
+    @GetMapping("/listarMatricula")
     public ResponseEntity<Optional<Aluno>> selecionarPeloId(String matricula) {
         return ResponseEntity.ok(alunoService.buscarPorMatricula(matricula));
+    }
+    @GetMapping("/listarDesativo")
+    public ResponseEntity<List<Aluno>> selecionarDesativo() {
+        return ResponseEntity.ok(alunoService.buscarPorDesativado());
+    }
+
+    @GetMapping("/listarAtivo")
+    public ResponseEntity<List<Aluno>> selecionarAtivo() {
+        return ResponseEntity.ok(alunoService.buscarPorAtivo());
     }
 
     @PostMapping("/adicionar")

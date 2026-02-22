@@ -34,6 +34,17 @@ public class AlunoService {
         return alunoRepository.findByMatricula(matricula);
     }
 
+    public List<Aluno> buscarPorDesativado()
+    {
+        return alunoRepository.findByAtivo('0');
+    }
+
+    public List<Aluno> buscarPorAtivo()
+    {
+        return alunoRepository.findByAtivo('1');
+    }
+
+
     public Aluno salvar(AlunoRequest alunoRequest) {
         if (alunoRequest == null) {
             throw new IllegalArgumentException("Aluno não pode ser nulo");
