@@ -59,6 +59,7 @@ public class AlunoService {
 
         aluno.setNome(alunoAtualizado.getNome());
         aluno.setSenha(alunoAtualizado.getSenha());
+        aluno.setAtivo(alunoAtualizado.toEntity().getAtivo());
 
         return alunoRepository.save(aluno);
     }
