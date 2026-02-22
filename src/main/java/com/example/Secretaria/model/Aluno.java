@@ -29,4 +29,9 @@ public class Aluno {
     @NotNull(message = "campo 'matricula' não pode ser vazio")
     private String matricula;
 
+    @Builder.Default
+    @Column(nullable = false)
+    private char ativo = '0';
+
+
 }
