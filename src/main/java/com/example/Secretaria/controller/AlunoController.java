@@ -18,13 +18,16 @@ import java.util.Optional;
 @RestController
 public class AlunoController {
     private final AlunoService alunoService;
+
     public AlunoController(AlunoService alunoService) {
         this.alunoService = alunoService;
     }
+
     @GetMapping("/listar")
     public List<Aluno> listarAluno() {
         return alunoService.listar();
     }
+
     @GetMapping("/listarMatricula")
     public ResponseEntity<Optional<Aluno>> selecionarPeloId(String matricula) {
         return ResponseEntity.ok(alunoService.buscarPorMatricula(matricula));
