@@ -1,5 +1,6 @@
 package com.example.Secretaria.controller;
 
+import com.example.Secretaria.dto.request.AlunoAtualizarRequest;
 import com.example.Secretaria.dto.request.AlunoRequest;
 import com.example.Secretaria.model.Aluno;
 import com.example.Secretaria.service.AlunoService;
@@ -50,7 +51,7 @@ public class AlunoController {
 
     @PutMapping("/atualizar/{id}")
     public ResponseEntity<String> atualizarProduto(@PathVariable Integer id,
-                                                   @Validated @RequestBody AlunoRequest alunoAtualizado) {
+                                                   @Validated @RequestBody AlunoAtualizarRequest alunoAtualizado) {
         alunoService.atualizarAluno(id, alunoAtualizado);
         return ResponseEntity.ok("Produto atualizado com sucesso!");
     }

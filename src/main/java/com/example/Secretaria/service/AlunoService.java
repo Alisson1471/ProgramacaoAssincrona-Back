@@ -1,5 +1,6 @@
 package com.example.Secretaria.service;
 
+import com.example.Secretaria.dto.request.AlunoAtualizarRequest;
 import com.example.Secretaria.dto.request.AlunoRequest;
 import com.example.Secretaria.dto.response.AlunoResponse;
 import com.example.Secretaria.model.Aluno;
@@ -53,7 +54,7 @@ public class AlunoService {
         return alunoRepository.save(aluno);
     }
 
-    public Aluno atualizarAluno(Integer id, AlunoRequest alunoAtualizado) {
+    public Aluno atualizarAluno(Integer id, AlunoAtualizarRequest alunoAtualizado) {
         Aluno aluno = alunoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Aluno com ID " + id + " não encontrado."));
 
