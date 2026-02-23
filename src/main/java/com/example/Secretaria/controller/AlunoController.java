@@ -50,10 +50,10 @@ public class AlunoController {
     }
 
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<String> atualizarProduto(@PathVariable Integer id,
+    public ResponseEntity<String> atualizarAluno(@PathVariable Integer id,
                                                    @Validated @RequestBody AlunoAtualizarRequest alunoAtualizado) {
         alunoService.atualizarAluno(id, alunoAtualizado);
-        return ResponseEntity.ok("Produto atualizado com sucesso!");
+        return ResponseEntity.ok("Aluno atualizado com sucesso!");
     }
 
     @DeleteMapping("/deletar")
