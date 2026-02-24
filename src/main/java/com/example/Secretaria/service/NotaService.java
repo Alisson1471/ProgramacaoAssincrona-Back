@@ -4,9 +4,7 @@ import com.example.Secretaria.adapter.AlunoAdapter;
 import com.example.Secretaria.adapter.NotaAdapter;
 import com.example.Secretaria.adapter.ProfessorAdapter;
 import com.example.Secretaria.dto.request.NotaRequest;
-import com.example.Secretaria.dto.response.NotaResponse;
-import com.example.Secretaria.dto.response.NotaResponseDTO;
-import com.example.Secretaria.dto.response.StatusDisciplineResponse;
+import com.example.Secretaria.dto.response.*;
 import com.example.Secretaria.mapper.NotaMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -54,6 +52,10 @@ public class NotaService {
 
     public List<StatusDisciplineResponse> statusByDiscipline() {
         return notaAdapter.statusDisciplinas();
+    }
+
+    public List<NotaDisciplinaResponse> statusByDisciplinaByAluno(Integer alunoId) {
+        return notaAdapter.statusDisciplinasByAluno(alunoId);
     }
 
 }

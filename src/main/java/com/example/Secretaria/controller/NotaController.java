@@ -1,9 +1,7 @@
 package com.example.Secretaria.controller;
 
 import com.example.Secretaria.dto.request.NotaRequest;
-import com.example.Secretaria.dto.response.NotaResponse;
-import com.example.Secretaria.dto.response.NotaResponseDTO;
-import com.example.Secretaria.dto.response.StatusDisciplineResponse;
+import com.example.Secretaria.dto.response.*;
 import com.example.Secretaria.service.NotaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +37,11 @@ public class NotaController {
     @GetMapping("/disciplina")
     public ResponseEntity<List<StatusDisciplineResponse>> statusByDiscipline() {
         return ResponseEntity.status(200).body(notaService.statusByDiscipline());
+    }
+
+    @GetMapping("/discplinaByAluno")
+    public ResponseEntity<List<NotaDisciplinaResponse>> statusByDisciplineByAluno(@RequestParam("aluno_id") Integer alunoId) {
+        return ResponseEntity.status(200).body(notaService.statusByDisciplinaByAluno(alunoId));
     }
 
 }
