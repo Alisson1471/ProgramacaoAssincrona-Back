@@ -1,6 +1,8 @@
 package com.example.Secretaria.mapper;
 
 import com.example.Secretaria.dto.request.NotaRequest;
+import com.example.Secretaria.dto.response.NotaDisciplinaAlunoResponse;
+import com.example.Secretaria.dto.response.NotaDisciplinaResponse;
 import com.example.Secretaria.dto.response.NotaResponse;
 import com.example.Secretaria.model.Aluno;
 import com.example.Secretaria.model.Nota;
@@ -30,6 +32,14 @@ public class NotaMapper {
                 nota.getTitulo(),
                 nota.getValor(),
                 nota.getDisciplina().getNome());
+    }
+
+    public NotaDisciplinaResponse convertToNotaDisciplina(NotaDisciplinaAlunoResponse request) {
+        return NotaDisciplinaResponse.builder()
+                .media(request.getMedia())
+                .disciplina(request.getDisciplinaNome())
+                .status(request.getStatus())
+                .build();
     }
 
 }

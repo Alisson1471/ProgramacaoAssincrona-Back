@@ -1,5 +1,6 @@
 package com.example.Secretaria.repository;
 
+import com.example.Secretaria.dto.response.NotaDisciplinaAlunoResponse;
 import com.example.Secretaria.dto.response.NotaResponseDTO;
 import com.example.Secretaria.dto.response.StatusDisciplineResponse;
 import com.example.Secretaria.model.Nota;
@@ -20,4 +21,6 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
     @Query(value = "SELECT titulo, valor FROM nota WHERE aluno_id = :aluno_id", nativeQuery = true)
     List<NotaResponseDTO> findByAluno_Id(int aluno_id);
 
+    @Query(value = "SELECT * FROM fn_status_disciplina_by_aluno(:aluno_id)", nativeQuery = true)
+    List<NotaDisciplinaAlunoResponse> findStatusDisciplinaByAlunoId(int aluno_id);
 }
