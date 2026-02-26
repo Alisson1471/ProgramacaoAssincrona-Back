@@ -54,6 +54,18 @@ public class AlunoService {
         return alunoRepository.save(aluno);
     }
 
+    public void updateActive(int alunoId) {
+        var result = alunoRepository.findById(alunoId);
+
+        if (result.isEmpty()) {
+            throw new EntityNotFoundException("Aluno com ID "+alunoId+" não encontrado.");
+        }
+
+        var aluno = result.get();
+        aluno.updateStatus();
+        alunoRepository.save(aluno);
+    }
+
     public Aluno atualizarAluno(Integer id, AlunoAtualizarRequest alunoAtualizado) {
         Aluno aluno = alunoRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Aluno com ID " + id + " não encontrado."));
