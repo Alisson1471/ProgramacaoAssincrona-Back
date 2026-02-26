@@ -33,5 +33,8 @@ public class Aluno {
     @Column(nullable = false)
     private char ativo = '0';
 
+    public void updateStatus() {
+        this.ativo = (this.ativo == '1') ? '0' : '1';
+    }
 
 }

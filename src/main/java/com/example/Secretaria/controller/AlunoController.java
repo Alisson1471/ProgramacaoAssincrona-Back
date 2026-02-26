@@ -45,8 +45,14 @@ public class AlunoController {
 
     @PostMapping("/adicionar")
     public ResponseEntity<String> adicionarAluno(@Valid AlunoRequest alunoRequest) {
-        Aluno aluno = alunoService.salvar(alunoRequest);
+        alunoService.salvar(alunoRequest);
         return ResponseEntity.ok("Aluno adicionado com sucesso.");
+    }
+
+    @PatchMapping
+    public ResponseEntity<String> updateActiveAluno(int alunoId) {
+        alunoService.updateActive(alunoId);
+        return ResponseEntity.ok("Aluno atualizado com sucesso.");
     }
 
     @PutMapping("/atualizar/{id}")
