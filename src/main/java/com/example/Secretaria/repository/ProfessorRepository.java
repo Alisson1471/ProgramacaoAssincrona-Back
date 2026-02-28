@@ -9,4 +9,6 @@ public interface ProfessorRepository extends JpaRepository<Professor, Integer> {
 
     Optional<Professor> findByCpfAndSenha(String cpf, String senha);
 
+    Optional<Professor> findByCpf(String cpf);
+
 }
