@@ -14,6 +14,5 @@ public class ProfessorRequest {
     private String nome;
     private String cpf;
     private String disciplina;
-    private int adminId;
 
 }

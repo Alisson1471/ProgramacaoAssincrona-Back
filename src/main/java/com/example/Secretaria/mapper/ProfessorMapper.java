@@ -28,14 +28,13 @@ public class ProfessorMapper {
         return professorResponse;
     }
 
-    public Professor convertToEntity(ProfessorRequest request, Disciplina disciplina, Admin admin) {
+    public Professor convertToEntity(ProfessorRequest request, Disciplina disciplina) {
         var professor = new Professor();
         professor.setCpf(request.getCpf());
         professor.setNome(request.getNome());
         professor.setDisciplina(disciplina);
-        professor.setAdmin(admin);
-        professor.setSenha(request.getNome() + "123");
-        professor.setMatricula("123456");
+        professor.setSenha("123456");
+        professor.setMatricula("0001-"+request.getCpf());
         return professor;
 
     }

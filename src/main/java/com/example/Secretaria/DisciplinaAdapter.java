@@ -13,7 +13,7 @@ public class DisciplinaAdapter {
     private final DisciplinaRepository disciplinaRepository;
 
     public Disciplina findByName(String name) {
-        var disciplina = disciplinaRepository.findByNome(name);
+        var disciplina = disciplinaRepository.findByNomeIgnoreCase(name);
 
         if (disciplina.isEmpty()) {
             throw new EntityNotFoundException("Disciplina não encontrada.");

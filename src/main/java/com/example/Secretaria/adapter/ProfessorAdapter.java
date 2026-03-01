@@ -1,6 +1,5 @@
 package com.example.Secretaria.adapter;
 
-import com.example.Secretaria.model.Nota;
 import com.example.Secretaria.model.Professor;
 import com.example.Secretaria.repository.ProfessorRepository;
 import jakarta.persistence.EntityExistsException;
@@ -55,6 +54,6 @@ public class ProfessorAdapter {
     }
 
     public void create(Professor professor) {
-
+        professorRepository.save(professor);
     }
 }
