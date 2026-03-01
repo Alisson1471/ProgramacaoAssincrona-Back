@@ -1,16 +1,10 @@
 package com.example.Secretaria.service;
 
 import com.example.Secretaria.DisciplinaAdapter;
-import com.example.Secretaria.adapter.AlunoAdapter;
-import com.example.Secretaria.adapter.NotaAdapter;
 import com.example.Secretaria.adapter.ProfessorAdapter;
-import com.example.Secretaria.dto.request.NotaRequest;
 import com.example.Secretaria.dto.request.ProfessorRequest;
-import com.example.Secretaria.dto.response.NotaResponse;
 import com.example.Secretaria.dto.response.ProfessorResponse;
-import com.example.Secretaria.mapper.NotaMapper;
 import com.example.Secretaria.mapper.ProfessorMapper;
-import com.example.Secretaria.model.Professor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -39,9 +33,9 @@ public class ProfessorService {
     public ProfessorResponse createProfessor(ProfessorRequest request) {
         professorAdapter.verifyExists(request.getCpf());
 
-        var disciplina = disciplinaAdapter.findByName(request.getNome());
+        var disciplina = disciplinaAdapter.findByName(request.getDisciplina());
 
-        var professor = professorMapper.convertToEntity(request, disciplina, null);
+        var professor = professorMapper.convertToEntity(request, disciplina);
 
         professorAdapter.create(professor);
 

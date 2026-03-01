@@ -35,7 +35,4 @@ public class Professor {
     @JoinColumn(name = "disciplina_id", nullable = false)
     private Disciplina disciplina;
 
-    @ManyToOne
-    @JoinColumn(name = "admin_id", nullable = false)
-    private Admin admin;
 }
