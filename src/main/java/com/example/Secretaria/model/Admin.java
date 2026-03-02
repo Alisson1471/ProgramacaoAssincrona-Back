@@ -7,21 +7,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@Table(name = "admin")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "admin")
 public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotNull(message = "campo 'nome' não pode ser vazio")
+    @NotNull
     private String nome;
 
-    @NotNull(message = "campo 'senha' não pode ser vazio")
+    @NotNull
+    private String cpf;
+
+    @NotNull
     private String senha;
 }
