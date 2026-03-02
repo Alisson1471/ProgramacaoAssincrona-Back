@@ -28,6 +28,11 @@ public class ObservacaoController {
         return ResponseEntity.status(200).body(observacaoService.get(alunoId, professorId));
     }
 
+    @GetMapping("/total")
+    public ResponseEntity<Long> getTotal() {
+        return ResponseEntity.status(200).body(observacaoService.getTotal());
+    }
+
     @DeleteMapping
     public ResponseEntity<String> delete(@RequestParam Integer id) {
         observacaoService.delete(id);

@@ -28,6 +28,10 @@ public class ObservacaoAdapter {
         return list;
     }
 
+    public Long getTotalObservacoes() {
+        return observacaoRepository.countTotal();
+    }
+
     public List<Observacao> getObservacaoByAluno(Integer alunoId) {
         var list = observacaoRepository.findByAluno_Id(alunoId);
 

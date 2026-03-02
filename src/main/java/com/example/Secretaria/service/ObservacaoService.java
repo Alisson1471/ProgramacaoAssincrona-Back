@@ -48,6 +48,10 @@ public class ObservacaoService {
                 .toList();
     }
 
+    public Long getTotal() {
+        return observacaoAdapter.getTotalObservacoes();
+    }
+
     public void delete(Integer id) {
         var resultado = observacaoAdapter.delete(id);
 

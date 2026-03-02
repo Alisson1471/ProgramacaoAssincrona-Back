@@ -1,9 +1,6 @@
 package com.example.Secretaria.adapter;
 
-import com.example.Secretaria.dto.response.NotaDisciplinaAlunoResponse;
-import com.example.Secretaria.dto.response.NotaDisciplinaResponse;
-import com.example.Secretaria.dto.response.NotaResponseDTO;
-import com.example.Secretaria.dto.response.StatusDisciplineResponse;
+import com.example.Secretaria.dto.response.*;
 import com.example.Secretaria.mapper.NotaMapper;
 import com.example.Secretaria.model.Nota;
 import com.example.Secretaria.repository.NotaRepository;
@@ -25,13 +22,23 @@ public class NotaAdapter {
     }
 
     public List<NotaResponseDTO> findByAluno(int id) {
-        var notas = notaRepository.findByAluno_Id(id);
+        var grades = notaRepository.findByAluno_Id(id);
 
-        if (notas == null) {
+        if (grades == null) {
             throw new EntityNotFoundException("Notas não encontradas!");
         }
 
-        return notas;
+        return grades;
+    }
+
+    public List<NotaAlunoReponseDTO> findGradeByDiscipline(int discipline) {
+        var grades = notaRepository.findAlunoStatusByDisciplina(discipline);
+
+        if (grades == null) {
+            throw new EntityNotFoundException("Notas encontradas!");
+        }
+
+        return grades;
     }
 
     public Nota findById(Integer id) {
