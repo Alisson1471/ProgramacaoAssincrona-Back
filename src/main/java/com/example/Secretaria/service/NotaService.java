@@ -1,5 +1,6 @@
 package com.example.Secretaria.service;
 
+import com.example.Secretaria.DisciplinaAdapter;
 import com.example.Secretaria.adapter.AlunoAdapter;
 import com.example.Secretaria.adapter.NotaAdapter;
 import com.example.Secretaria.adapter.ProfessorAdapter;
@@ -24,7 +25,9 @@ public class NotaService {
 
     private final NotaAdapter notaAdapter;
 
-    public List<NotaResponseDTO> getNotas(int alunoId) {
+    private final DisciplinaAdapter disciplinaAdapter;
+
+    public List<NotaResponseDTO> getGrades(int alunoId) {
         return notaAdapter.findByAluno(alunoId);
     }
 
@@ -48,6 +51,11 @@ public class NotaService {
         var nota2 = notaAdapter.save(nota);
 
         return notaMapper.convertToNotaResponse(nota2);
+    }
+
+    public List<NotaAlunoReponseDTO> getGradesByDiscipline(String discipline) {
+        var disciplineEntity = disciplinaAdapter.findByName(discipline);
+        return notaAdapter.findGradeByDiscipline(disciplineEntity.getId());
     }
 
     public List<StatusDisciplineResponse> statusByDiscipline() {

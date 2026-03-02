@@ -5,4 +5,5 @@ public interface StatusDisciplineResponse {
     Double getMediaDisciplina();
     Integer getAprovados();
     Integer getReprovados();
+    Double getPiorNota();
 }

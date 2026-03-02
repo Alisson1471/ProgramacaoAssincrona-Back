@@ -19,7 +19,7 @@ public class NotaController {
 
     @GetMapping
     public ResponseEntity<List<NotaResponseDTO>> getNotas(@RequestParam(name = "aluno_id") int alunoId) {
-        return ResponseEntity.status(200).body(notaService.getNotas(alunoId));
+        return ResponseEntity.status(200).body(notaService.getGrades(alunoId));
     }
 
     @PostMapping
@@ -34,7 +34,12 @@ public class NotaController {
         return ResponseEntity.status(201).body(notaService.update(notaId, valor));
     }
 
-    @GetMapping("/disciplina")
+    @GetMapping("/notasDisciplina")
+    public ResponseEntity<List<NotaAlunoReponseDTO>> getGradesByDiscipline(@RequestParam("disciplina") String discipline) {
+        return ResponseEntity.status(200).body(notaService.getGradesByDiscipline(discipline));
+    }
+
+    @GetMapping("/statusDisciplina")
     public ResponseEntity<List<StatusDisciplineResponse>> statusByDiscipline() {
         return ResponseEntity.status(200).body(notaService.statusByDiscipline());
     }
