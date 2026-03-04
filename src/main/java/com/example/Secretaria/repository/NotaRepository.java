@@ -21,7 +21,8 @@ public interface NotaRepository extends JpaRepository<Nota, Integer> {
     List<StatusDisciplineResponse> findStatusDiscipline();
 
     @Query(value = """
-        SELECT n.titulo,
+        SELECT n.id,
+               n.titulo,
                d.nome AS disciplina,
                n.valor
         FROM nota n
