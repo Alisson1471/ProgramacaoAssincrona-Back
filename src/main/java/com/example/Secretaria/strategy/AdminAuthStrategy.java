@@ -1,17 +1,17 @@
 package com.example.Secretaria.strategy;
 
-import com.example.Secretaria.dto.request.LoginRequest;
+import com.example.Secretaria.dto.request.AuthRequest;
 import com.example.Secretaria.dto.response.UserResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AdminLoginStrategy implements LoginStrategy {
+public class AdminAuthStrategy implements AuthStrategy {
 
-    public UserResponse login(LoginRequest loginRequest) {
+    public UserResponse login(AuthRequest authRequest) {
         return null;
     }
 
-    public void updateSenha(LoginRequest loginRequest) {
+    public void updateSenha(AuthRequest authRequest) {
 
     }
 
