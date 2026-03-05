@@ -23,6 +23,10 @@ public class AlunoLoginStrategy implements LoginStrategy {
         return alunoMapper.convertToResponse(aluno);
     }
 
+    @Override
+    public void updateSenha(LoginRequest loginRequest) {
+
+    }
 
     @Override
     public boolean supports(String userType) {

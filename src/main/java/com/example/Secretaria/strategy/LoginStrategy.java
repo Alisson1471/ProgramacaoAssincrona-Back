@@ -5,5 +5,6 @@ import com.example.Secretaria.dto.response.UserResponse;
 
 public interface LoginStrategy {
     UserResponse login(LoginRequest loginRequest);
+    void updateSenha(LoginRequest loginRequest);
     boolean supports(String userType);
 }
