@@ -11,6 +11,10 @@ public class AdminLoginStrategy implements LoginStrategy {
         return null;
     }
 
+    public void updateSenha(LoginRequest loginRequest) {
+
+    }
+
     public boolean supports(String userType) {
         return userType.equalsIgnoreCase("ADMIN");
     }

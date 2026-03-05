@@ -23,6 +23,11 @@ public class ProfessorLoginStrategy implements LoginStrategy {
     }
 
     @Override
+    public void updateSenha(LoginRequest loginRequest) {
+        return;
+    }
+
+    @Override
     public boolean supports(String userType) {
         return userType.equalsIgnoreCase("Professor");
     }
