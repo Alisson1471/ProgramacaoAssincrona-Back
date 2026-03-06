@@ -1,6 +1,6 @@
 package com.example.Secretaria.service;
 
-import com.example.Secretaria.DisciplinaAdapter;
+import com.example.Secretaria.adapter.DisciplinaAdapter;
 import com.example.Secretaria.adapter.AlunoAdapter;
 import com.example.Secretaria.adapter.NotaAdapter;
 import com.example.Secretaria.adapter.ProfessorAdapter;
