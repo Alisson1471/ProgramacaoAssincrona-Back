@@ -5,8 +5,10 @@ import com.example.Secretaria.dto.request.AlunoRequest;
 import com.example.Secretaria.dto.response.AlunoResponse;
 import com.example.Secretaria.model.Aluno;
 import com.example.Secretaria.repository.AlunoRepository;
+import com.example.Secretaria.utils.CryptServers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,9 +19,11 @@ import java.util.Optional;
 public class AlunoService {
 
     private final AlunoRepository alunoRepository;
+    private final CryptServers cryptServers;
 
-    public AlunoService(AlunoRepository alunoRepository) {
+    public AlunoService(AlunoRepository alunoRepository, CryptServers cryptServers) {
         this.alunoRepository = alunoRepository;
+        this.cryptServers = cryptServers;
     }
 
     public Aluno getAluno(Integer id) {
@@ -50,6 +54,8 @@ public class AlunoService {
         if (alunoRequest == null) {
             throw new IllegalArgumentException("Aluno não pode ser nulo");
         }
+        String senhaCriptografada = cryptServers.crypt(alunoRequest.getSenha());
+        alunoRequest.setSenha(senhaCriptografada);
         Aluno aluno = alunoRequest.toEntity();
         return alunoRepository.save(aluno);
     }

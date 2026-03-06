@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface AlunoRepository extends JpaRepository<Aluno, Integer> {
-    Optional<Aluno> findByCpfAndSenha(String cpf, String senha);
+    Optional<Aluno> findByCpf(String cpf);
     Optional<Aluno> findByMatricula(String matricula);
     List<Aluno> findByAtivo(Character ativo);
 }
