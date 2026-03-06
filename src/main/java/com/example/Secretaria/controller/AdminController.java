@@ -13,14 +13,6 @@ public class AdminController {
 
     private final AdminService adminService;
 
-    @PostMapping("/login")
-    public ResponseEntity<Admin> login(@RequestParam String cpf,
-                                       @RequestParam String senha) {
-
-        var admin = adminService.login(cpf, senha);
-        return ResponseEntity.ok(admin);
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<Admin> buscarPorId(@PathVariable Integer id) {
 
