@@ -13,14 +13,12 @@ import lombok.NoArgsConstructor;
 public class AlunoAtualizarRequest {
 
     private String nome;
-    private String senha;
     private String cpf;
     private Character ativo;
 
     public Aluno toEntity() {
         return Aluno.builder()
                 .nome(this.getNome())
-                .senha(this.getSenha())
                 .cpf(this.getCpf())
                 .ativo(this.getAtivo())
                 .build();

@@ -2,13 +2,10 @@ package com.example.Secretaria.service;
 
 import com.example.Secretaria.dto.request.AlunoAtualizarRequest;
 import com.example.Secretaria.dto.request.AlunoRequest;
-import com.example.Secretaria.dto.response.AlunoResponse;
 import com.example.Secretaria.model.Aluno;
 import com.example.Secretaria.repository.AlunoRepository;
-import com.example.Secretaria.utils.CryptServers;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.Secretaria.utils.CryptService;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,11 +16,11 @@ import java.util.Optional;
 public class AlunoService {
 
     private final AlunoRepository alunoRepository;
-    private final CryptServers cryptServers;
+    private final CryptService cryptService;
 
-    public AlunoService(AlunoRepository alunoRepository, CryptServers cryptServers) {
+    public AlunoService(AlunoRepository alunoRepository, CryptService cryptService) {
         this.alunoRepository = alunoRepository;
-        this.cryptServers = cryptServers;
+        this.cryptService = cryptService;
     }
 
     public Aluno getAluno(Integer id) {
@@ -50,14 +47,15 @@ public class AlunoService {
     }
 
 
-    public Aluno salvar(AlunoRequest alunoRequest) {
+    public void salvar(AlunoRequest alunoRequest) {
         if (alunoRequest == null) {
             throw new IllegalArgumentException("Aluno não pode ser nulo");
         }
-        String senhaCriptografada = cryptServers.crypt(alunoRequest.getSenha());
+
+        String senhaCriptografada = cryptService.crypt(alunoRequest.getSenha());
         alunoRequest.setSenha(senhaCriptografada);
         Aluno aluno = alunoRequest.toEntity();
-        return alunoRepository.save(aluno);
+        alunoRepository.save(aluno);
     }
 
     public void updateActive(int alunoId) {
@@ -77,7 +75,6 @@ public class AlunoService {
                 .orElseThrow(() -> new EntityNotFoundException("Aluno com ID " + id + " não encontrado."));
 
         aluno.setNome(alunoAtualizado.getNome());
-        aluno.setSenha(alunoAtualizado.getSenha());
         aluno.setAtivo(alunoAtualizado.toEntity().getAtivo());
 
         return alunoRepository.save(aluno);

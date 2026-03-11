@@ -37,7 +37,7 @@ public class ProfessorService {
 
         var professor = professorMapper.convertToEntity(request, disciplina);
 
-        professorAdapter.create(professor);
+        professorAdapter.save(professor);
 
         return professorMapper.convertToResponse(professor);
     }

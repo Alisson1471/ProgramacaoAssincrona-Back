@@ -1,14 +1,11 @@
 package com.example.Secretaria.adapter;
 
 import com.example.Secretaria.model.Admin;
-import com.example.Secretaria.model.Aluno;
 import com.example.Secretaria.repository.AdminRepository;
-import com.example.Secretaria.repository.AlunoRepository;
-import com.example.Secretaria.utils.CryptServers;
+import com.example.Secretaria.utils.CryptService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,14 +13,14 @@ import org.springframework.stereotype.Component;
 public class AdminAdapter {
 
     private final AdminRepository adminRepository;
-    private final CryptServers cryptServers;
+    private final CryptService cryptService;
 
     public Admin login(String cpf, String senha) {
 
         var admin = adminRepository.findByCpf(cpf)
                 .orElseThrow(() -> new EntityNotFoundException("Admin não encontrado"));
 
-        if (!cryptServers.matches(senha, admin.getSenha())) {
+        if (!cryptService.matches(senha, admin.getSenha())) {
             throw new BadCredentialsException("Senha inválida");
         }
 
@@ -33,6 +30,10 @@ public class AdminAdapter {
     public Admin findById(Integer id) {
         return adminRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Admin não encontrado"));
+    }
+
+    public Admin salvar(Admin admin) {
+        return adminRepository.save(admin);
     }
 
 }
