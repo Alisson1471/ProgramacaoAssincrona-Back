@@ -11,10 +11,6 @@ public class AdminService {
 
     private final AdminAdapter adminAdapter;
 
-    public Admin login(String cpf, String senha) {
-        return adminAdapter.login(cpf, senha);
-    }
-
     public Admin buscarPorId(Integer id) {
         return adminAdapter.findById(id);
     }

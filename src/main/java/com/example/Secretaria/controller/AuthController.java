@@ -1,6 +1,7 @@
 package com.example.Secretaria.controller;
 
 import com.example.Secretaria.dto.request.AuthRequest;
+import com.example.Secretaria.dto.request.UpdateRequest;
 import com.example.Secretaria.dto.response.UserResponse;
 import com.example.Secretaria.factory.AuthStrategyFactory;
 import com.example.Secretaria.strategy.AuthStrategy;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(name = "/auth")
+@RequestMapping("/auth")
 public class AuthController {
 
     private final AuthStrategyFactory factory;
@@ -22,9 +23,10 @@ public class AuthController {
     }
 
     @PatchMapping("/update-password")
-    public void updateSenha(@RequestBody AuthRequest authRequest) {
-        AuthStrategy strategy = factory.getStrategy(authRequest.getUserType());
-        strategy.updateSenha(authRequest);
+    public ResponseEntity<Void> updateSenha(@RequestBody UpdateRequest request) {
+        AuthStrategy strategy = factory.getStrategy(request.getUserType());
+        strategy.updateSenha(request);
+        return ResponseEntity.noContent().build();
     }
 
 }
