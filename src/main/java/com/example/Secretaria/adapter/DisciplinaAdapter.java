@@ -1,4 +1,4 @@
-package com.example.Secretaria;
+package com.example.Secretaria.adapter;
 
 import com.example.Secretaria.model.Disciplina;
 import com.example.Secretaria.repository.DisciplinaRepository;

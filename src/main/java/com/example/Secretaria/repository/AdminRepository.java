@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface AdminRepository extends JpaRepository<Admin, Integer> {
-    Optional<Admin> findByCpfAndSenha(String cpf, String senha);
+    Optional<Admin> findByCpf(String cpf);
     Optional<Admin> findById(Integer id);
 }

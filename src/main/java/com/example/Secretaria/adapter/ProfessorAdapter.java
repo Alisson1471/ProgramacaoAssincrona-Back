@@ -2,9 +2,12 @@ package com.example.Secretaria.adapter;
 
 import com.example.Secretaria.model.Professor;
 import com.example.Secretaria.repository.ProfessorRepository;
+import com.example.Secretaria.utils.CryptServers;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,15 +17,16 @@ import java.util.List;
 public class ProfessorAdapter {
 
     private final ProfessorRepository professorRepository;
+    private final CryptServers cryptServers;
 
     public Professor login(String cpf, String password) {
-        var professor = professorRepository.findByCpfAndSenha(cpf, password);
+        var professor = professorRepository.findByCpf(cpf)
+        .orElseThrow(() -> new EntityNotFoundException("Admin não encontrado"));
 
-        if (professor.isEmpty()) {
-            throw new EntityNotFoundException("Professor não encontrado.");
+        if (!cryptServers.matches(password, professor.getSenha())) {
+            throw new BadCredentialsException("Senha inválida");
         }
-
-        return professor.get();
+        return professor;
     }
 
     public List<Professor> findAll() {
