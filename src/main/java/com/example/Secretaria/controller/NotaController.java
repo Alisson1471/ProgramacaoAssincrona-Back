@@ -3,7 +3,7 @@ package com.example.Secretaria.controller;
 import com.example.Secretaria.dto.request.NotaRequest;
 import com.example.Secretaria.dto.response.*;
 import com.example.Secretaria.service.NotaService;
-import com.example.Secretaria.swgger.NotaControllerDocs;
+import com.example.Secretaria.controller.docs.NotaControllerDocs;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

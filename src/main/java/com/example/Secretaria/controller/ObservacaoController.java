@@ -2,9 +2,8 @@ package com.example.Secretaria.controller;
 
 import com.example.Secretaria.dto.request.ObservacaoRequest;
 import com.example.Secretaria.dto.response.ObservacaoResponse;
-import com.example.Secretaria.model.Observacao;
 import com.example.Secretaria.service.ObservacaoService;
-import com.example.Secretaria.swgger.ObservacaoControllerDocs;
+import com.example.Secretaria.controller.docs.ObservacaoControllerDocs;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

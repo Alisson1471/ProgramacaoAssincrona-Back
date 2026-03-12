@@ -1,5 +1,6 @@
 package com.example.Secretaria.controller;
 
+import com.example.Secretaria.controller.docs.AuthControllerDocs;
 import com.example.Secretaria.dto.request.AuthRequest;
 import com.example.Secretaria.dto.request.UpdateRequest;
 import com.example.Secretaria.dto.response.UserResponse;

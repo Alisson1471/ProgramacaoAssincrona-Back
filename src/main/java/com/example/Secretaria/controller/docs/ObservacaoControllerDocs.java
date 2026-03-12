@@ -1,4 +1,4 @@
-package com.example.Secretaria.swgger;
+package com.example.Secretaria.controller.docs;
 
 import com.example.Secretaria.dto.request.ObservacaoRequest;
 import com.example.Secretaria.dto.response.ObservacaoResponse;
