@@ -6,7 +6,6 @@ import com.example.Secretaria.dto.request.UpdateRequest;
 import com.example.Secretaria.dto.response.UserResponse;
 import com.example.Secretaria.factory.AuthStrategyFactory;
 import com.example.Secretaria.strategy.AuthStrategy;
-import com.example.Secretaria.swgger.AuthControllerDocs;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
