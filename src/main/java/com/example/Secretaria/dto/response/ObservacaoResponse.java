@@ -13,6 +13,7 @@ import java.time.OffsetDateTime;
 @NoArgsConstructor
 public class ObservacaoResponse {
 
+    private Integer id;
     private String aluno;
     private String professor;
     private String text;
