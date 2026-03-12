@@ -1,5 +1,6 @@
 package com.example.Secretaria.controller;
 
+import com.example.Secretaria.controller.docs.ProfessorControllerDocs;
 import com.example.Secretaria.dto.request.ProfessorRequest;
 import com.example.Secretaria.dto.response.ProfessorResponse;
 import com.example.Secretaria.service.ProfessorService;
@@ -12,7 +13,7 @@ import java.util.List;
 @RequestMapping("/professor")
 @RestController
 @RequiredArgsConstructor
-public class ProfessorController {
+public class ProfessorController implements ProfessorControllerDocs {
 
     private final ProfessorService professorService;
 

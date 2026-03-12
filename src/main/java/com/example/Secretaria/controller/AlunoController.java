@@ -1,5 +1,6 @@
 package com.example.Secretaria.controller;
 
+import com.example.Secretaria.controller.docs.AlunoControllerDocs;
 import com.example.Secretaria.dto.request.AlunoAtualizarRequest;
 import com.example.Secretaria.dto.request.AlunoRequest;
 import com.example.Secretaria.model.Aluno;
@@ -17,7 +18,7 @@ import java.util.Optional;
 @Tag(name = "Aluno", description = "Operações relacionadas aos Alunos")
 @RequestMapping("/aluno")
 @RestController
-public class AlunoController {
+public class AlunoController implements AlunoControllerDocs {
     private final AlunoService alunoService;
 
     public AlunoController(AlunoService alunoService) {
