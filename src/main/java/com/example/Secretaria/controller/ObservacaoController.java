@@ -4,6 +4,7 @@ import com.example.Secretaria.dto.request.ObservacaoRequest;
 import com.example.Secretaria.dto.response.ObservacaoResponse;
 import com.example.Secretaria.model.Observacao;
 import com.example.Secretaria.service.ObservacaoService;
+import com.example.Secretaria.swgger.ObservacaoControllerDocs;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/observacao")
-public class ObservacaoController {
+public class ObservacaoController implements ObservacaoControllerDocs {
 
     private final ObservacaoService observacaoService;
 

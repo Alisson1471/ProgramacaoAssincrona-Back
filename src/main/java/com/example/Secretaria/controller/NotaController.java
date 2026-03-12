@@ -3,6 +3,7 @@ package com.example.Secretaria.controller;
 import com.example.Secretaria.dto.request.NotaRequest;
 import com.example.Secretaria.dto.response.*;
 import com.example.Secretaria.service.NotaService;
+import com.example.Secretaria.swgger.NotaControllerDocs;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/nota")
 @RestController
-public class NotaController {
+public class NotaController implements NotaControllerDocs {
 
     private final NotaService notaService;
 
