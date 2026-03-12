@@ -23,6 +23,7 @@ public class ObservacaoMapper {
 
     public static ObservacaoResponse toResponse(Observacao observacao) {
         ObservacaoResponse response = new ObservacaoResponse();
+        response.setId(observacao.getId());
         response.setAluno(observacao.getAluno().getNome());
         response.setProfessor(observacao.getProfessor().getNome());
         response.setText(observacao.getTexto());
